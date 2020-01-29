@@ -4,7 +4,7 @@ public class ToDoList implements Aggregate{
     private int maxsize = 5;
 
     public ToDoList(){
-        this.tasks = new Task[maxsize]
+        this.tasks = new Task[maxsize];
     }
     public Task getTask(int index){
         return tasks[index];

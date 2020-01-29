@@ -1,11 +1,12 @@
+
 public class Main{
-    public static void main(String[] args){
-        String[] priorityFirst = new String[5];
-        String[] prioritySecond = new String[5];
-        String[] priorityThird = new String[5];
-        int countFirst = 0;        
-        int countSecond = 0;
-        int countThird = 0;
+    private static String[] priorityFirst;
+    private static String[] prioritySecond;
+    private static String[] priorityThird;
+    private static int countFirst = 0;
+    private static int countSecond = 0;
+    private static int countThird = 0;
+    public static void main(final String[] args){
 
         ToDoList toDoList = new ToDoList();
         toDoList.appendTask(new Task("掃除",3));
@@ -14,20 +15,20 @@ public class Main{
         toDoList.appendTask(new Task("買い物",2));
         toDoList.appendTask(new Task("ゴミ捨て",3));
 
-        Iterator it = toDoList.iterator();
+        final Iterator it = toDoList.iterator();
         while(it.hasNext()){
-            Task task = (Task)it.next();
+            final Task task = (Task)it.next();
             switch (task.getPriority()) {
                 case 1:
-                    priorityFirst = task.getName[countFirst];
+                    priorityFirst[countFirst] =task.getTaskName();
                     countFirst++;
                     break;
                 case 2:
-                    prioritySecond = task.getName[countSecond];
+                    prioritySecond[countSecond] =task.getTaskName();
                     countSecond++;
                     break;
                 case 3:
-                    priorityThird = task.getName[countFirst];
+                    priorityThird[countThird] = task.getTaskName();
                     countThird++;
                     break;
             }
@@ -35,24 +36,25 @@ public class Main{
         printTask();
 
     }
-    private void printTask(){
-        if(countFirst != 0){
+
+    private static void printTask() {
+        if (countFirst != 0) {
             System.out.println("優先度1");
-            for(String task:priorityFirst){
+            for(final String task:priorityFirst){
                 System.out.println(task);
             }
         }
 
         if(countSecond != 0){
             System.out.println("優先度2");
-            for(String task:prioritySecond){
+            for(final String task:prioritySecond){
                 System.out.println(task);
             }
         }
 
         if(countThird != 0){
             System.out.println("優先度3");
-            for(String task:priorityThird){
+            for(final String task:priorityThird){
                 System.out.println(task);
             }
         }

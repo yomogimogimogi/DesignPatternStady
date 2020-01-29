@@ -4,7 +4,7 @@ public class Task{
     private int priority;
     
     public Task(String taskName,int priority){
-        this.taskName = name;
+        this.taskName = taskName;
         this.priority = priority;
     }
 
